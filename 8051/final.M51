@@ -1,0 +1,275 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/02/2025  23:35:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE final.obj TO final RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  final.obj (FINAL)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  final (FINAL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0013H     UNIT         ?DT?FINAL
+            DATA    001BH     0002H     UNIT         _DATA_GROUP_
+            IDATA   001DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0020H     UNIT         ?PR?_DELAY_MS?FINAL
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     00C4H     UNIT         ?PR?PROCESSRECEIVEDDATA?FINAL
+            CODE    00EAH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0176H     0036H     UNIT         ?PR?_DISPLAY?FINAL
+            CODE    01ACH     002CH     UNIT         ?PR?UART_SER?FINAL
+            CODE    01D8H     001DH     UNIT         ?PR?MAIN?FINAL
+            CODE    01F5H     0019H     UNIT         ?C?LIB_CODE
+            CODE    020EH     0013H     UNIT         ?PR?_SENDSTR?FINAL
+            CODE    0221H     0013H     UNIT         ?CO?FINAL
+            CODE    0234H     000EH     UNIT         ?PR?INITUART?FINAL
+            CODE    0242H     0008H     UNIT         ?PR?_SENDBYTE?FINAL
+            CODE    024AH     0004H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   final (FINAL)
+
+
+SEGMENT                                 DATA_GROUP 
+  +--> CALLED SEGMENT                 START    LENGTH
+-----------------------------------------------------
+?C_C51STARTUP                         -----    -----
+  +--> ?PR?MAIN?FINAL
+  +--> ?C_INITSEG
+
+?PR?MAIN?FINAL                        -----    -----
+  +--> ?PR?INITUART?FINAL
+  +--> ?PR?PROCESSRECEIVEDDATA?FINAL
+  +--> ?PR?_DISPLAY?FINAL
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/02/2025  23:35:06  PAGE 2
+
+
+
+?PR?PROCESSRECEIVEDDATA?FINAL         -----    -----
+  +--> ?CO?FINAL
+
+?PR?_DISPLAY?FINAL                    001BH    0002H
+  +--> ?CO?FINAL
+  +--> ?PR?_DELAY_MS?FINAL
+
+
+
+SYMBOL TABLE OF MODULE:  final (FINAL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        FINAL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0242H         PUBLIC        _SendByte
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:01ACH         PUBLIC        UART_SER
+  C:0026H         PUBLIC        ProcessReceivedData
+  D:00A8H         PUBLIC        IE
+  D:0008H         PUBLIC        head
+  D:0009H         PUBLIC        TempData
+  B:00A8H.4       PUBLIC        ES
+  D:00B8H         PUBLIC        IP
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  B:00A0H.2       PUBLIC        LATCH1
+  B:00A0H.3       PUBLIC        LATCH2
+  C:01D8H         PUBLIC        main
+  C:020EH         PUBLIC        _SendStr
+  D:0099H         PUBLIC        SBUF
+  C:0003H         PUBLIC        _delay_ms
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0176H         PUBLIC        _Display
+  C:0221H         PUBLIC        dofly_DuanMa
+  D:0011H         PUBLIC        buf
+  D:008DH         PUBLIC        TH1
+  C:0234H         PUBLIC        InitUART
+  C:022CH         PUBLIC        dofly_WeiMa
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INITUART
+  C:0234H         LINE#         26
+  C:0234H         LINE#         27
+  C:0234H         LINE#         29
+  C:0237H         LINE#         30
+  C:023AH         LINE#         31
+  C:023DH         LINE#         32
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/02/2025  23:35:06  PAGE 3
+
+
+  C:023FH         LINE#         33
+  C:0241H         LINE#         35
+  -------         ENDPROC       INITUART
+  -------         PROC          MAIN
+  C:01D8H         LINE#         39
+  C:01D8H         LINE#         40
+  C:01D8H         LINE#         42
+  C:01DBH         LINE#         44
+  C:01DDH         LINE#         45
+  C:01DDH         LINE#         46
+  C:01DDH         LINE#         47
+  C:01E2H         LINE#         48
+  C:01E7H         LINE#         49
+  C:01E9H         LINE#         50
+  C:01ECH         LINE#         51
+  C:01ECH         LINE#         52
+  C:01F3H         LINE#         53
+  -------         ENDPROC       MAIN
+  -------         PROC          _SENDBYTE
+  D:0007H         SYMBOL        dat
+  C:0242H         LINE#         59
+  C:0242H         LINE#         60
+  C:0242H         LINE#         61
+  C:0244H         LINE#         62
+  C:0247H         LINE#         63
+  C:0249H         LINE#         64
+  -------         ENDPROC       _SENDBYTE
+  -------         PROC          _SENDSTR
+  D:0001H         SYMBOL        s
+  C:020EH         LINE#         68
+  C:020EH         LINE#         69
+  C:020EH         LINE#         70
+  C:0214H         LINE#         71
+  C:0214H         LINE#         72
+  C:0217H         LINE#         73
+  C:021EH         LINE#         74
+  C:0220H         LINE#         75
+  -------         ENDPROC       _SENDSTR
+  -------         PROC          UART_SER
+  -------         DO            
+  D:0007H         SYMBOL        Temp
+  -------         ENDDO         
+  C:01ACH         LINE#         79
+  C:01B7H         LINE#         83
+  C:01BAH         LINE#         84
+  C:01BAH         LINE#         85
+  C:01BCH         LINE#         86
+  C:01BEH         LINE#         89
+  C:01C5H         LINE#         90
+  C:01C7H         LINE#         91
+  C:01CFH         LINE#         92
+  C:01CFH         LINE#         95
+  -------         ENDPROC       UART_SER
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/02/2025  23:35:06  PAGE 4
+
+
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         97
+  C:0003H         LINE#         98
+  C:0003H         LINE#         100
+  C:000DH         LINE#         101
+  C:000DH         LINE#         102
+  C:0010H         LINE#         103
+  C:0010H         LINE#         105
+  C:001BH         LINE#         106
+  C:0022H         LINE#         107
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _DISPLAY
+  D:001BH         SYMBOL        FirstBit
+  D:001CH         SYMBOL        Num
+  -------         DO            
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:0176H         LINE#         109
+  C:017AH         LINE#         110
+  C:017AH         LINE#         113
+  C:0182H         LINE#         114
+  C:0182H         LINE#         115
+  C:0185H         LINE#         116
+  C:0187H         LINE#         117
+  C:0189H         LINE#         119
+  C:0192H         LINE#         120
+  C:0194H         LINE#         121
+  C:0196H         LINE#         123
+  C:019DH         LINE#         124
+  C:019FH         LINE#         125
+  C:01A1H         LINE#         127
+  C:01A8H         LINE#         128
+  C:01ABH         LINE#         129
+  -------         ENDPROC       _DISPLAY
+  -------         PROC          PROCESSRECEIVEDDATA
+  -------         DO            
+  D:0007H         SYMBOL        ten
+  D:0006H         SYMBOL        unit
+  D:0005H         SYMBOL        dot
+  D:0004H         SYMBOL        tenth
+  D:0003H         SYMBOL        hundredth
+  -------         ENDDO         
+  C:0026H         LINE#         131
+  C:0026H         LINE#         132
+  C:0026H         LINE#         134
+  C:0028H         LINE#         135
+  C:002AH         LINE#         136
+  C:002CH         LINE#         137
+  C:002EH         LINE#         138
+  C:0030H         LINE#         141
+  C:0040H         LINE#         142
+  C:0058H         LINE#         143
+  C:005AH         LINE#         144
+  C:005DH         LINE#         145
+  C:005DH         LINE#         148
+  C:006DH         LINE#         149
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/02/2025  23:35:06  PAGE 5
+
+
+  C:0082H         LINE#         150
+  C:0084H         LINE#         151
+  C:0087H         LINE#         152
+  C:0087H         LINE#         155
+  C:008AH         LINE#         156
+  C:0091H         LINE#         157
+  C:0093H         LINE#         158
+  C:0096H         LINE#         159
+  C:0096H         LINE#         162
+  C:00A6H         LINE#         163
+  C:00BBH         LINE#         164
+  C:00BDH         LINE#         165
+  C:00C0H         LINE#         166
+  C:00C0H         LINE#         169
+  C:00D0H         LINE#         170
+  C:00E5H         LINE#         171
+  C:00E6H         LINE#         172
+  C:00E9H         LINE#         173
+  C:00E9H         LINE#         175
+  -------         ENDPROC       PROCESSRECEIVEDDATA
+  -------         ENDMOD        FINAL
+
+  -------         MODULE        ?C?CLDPTR
+  C:01F5H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDSTR?FINAL
+
+Program Size: data=30.0 xdata=0 code=590
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

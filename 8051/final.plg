@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\MinLwin\Desktop\8051\8051\final.uv2
+Project File Date:  06/01/2025
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling final.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDSTR?FINAL
+Program Size: data=31.0 xdata=0 code=588
+creating hex file from "final"...
+"final" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling final.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDSTR?FINAL
+Program Size: data=30.0 xdata=0 code=590
+creating hex file from "final"...
+"final" - 0 Error(s), 1 Warning(s).
